@@ -23,3 +23,10 @@ class ResetPasswordPageLocators:
 class BlockingLocators:
     MODAL_LOADING = (By.CSS_SELECTOR, "img.Modal_modal__loading__3534A")
     MODAL_OVERLAY = (By.CSS_SELECTOR, "div.Modal_modal_overlay__x2ZCr")    
+
+class PersonalAccountLocators:
+    ORDER_HISTORY_SECTION = (By.XPATH, "//a[contains(text(), 'История заказов')]")
+    LOGOUT_BUTTON = (By.XPATH, "//button[contains(text(), 'Выход')]")
+
+class OrderHistoryLocators:
+    ORDER_CARDS = (By.CSS_SELECTOR, "[class*='OrderHistory_listItem']")

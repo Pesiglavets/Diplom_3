@@ -23,3 +23,7 @@ class LoginPage(BasePage):
     @allure.step('Нажать кнопку "Восстановить пароль"')
     def click_forgot_password_link(self):
         self.click_element(self.locators.FORGOT_PASSWORD_LINK)
+
+    @allure.step('Проверить наличие кнопки "Войти"')
+    def is_login_button_displayed(self):
+        return self.find_element(self.locators.LOGIN_BUTTON).is_displayed()
