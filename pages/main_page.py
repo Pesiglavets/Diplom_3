@@ -16,4 +16,10 @@ class MainPage(BasePage):
     def click_personal_account_button(self):
         self.click_element(self.locators.PERSONAL_ACCOUNT_BUTTON)
 
-    
+    @allure.step('Нажать кнопку "Конструктор"')
+    def click_constructor_button(self):
+        self.click_element(self.locators.CONSTRUCTOR_BUTTON)
+
+    @allure.step('Нажать кнопку "Лента заказов"')
+    def click_order_feed_button(self):
+        self.click_element(self.locators.ORDER_FEED_BUTTON)
