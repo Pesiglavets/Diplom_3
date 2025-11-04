@@ -57,3 +57,15 @@ class ApiClient:
             headers['Authorization'] = auth_token
         response = requests.post(f'{self.base_url}/orders', data=payload, headers=headers)
         return response
+    
+    def create_order_and_get_number(self, ingredients, auth_token=None):
+        response = self.create_order(ingredients, auth_token)
+        if response.status_code == 200:
+            return response.json()["order"]["number"]
+        return None
+
+    def get_first_ingredient_id(self):
+        ingredients = self.get_ingredients()
+        if ingredients and len(ingredients) > 0:
+            return ingredients[0]["_id"]
+        return None

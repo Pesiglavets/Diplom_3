@@ -51,6 +51,8 @@ class OrderFeedLocators:
     ORDER_FEED_SECTION = (By.CSS_SELECTOR, "[class*='OrderFeed_orderFeed__']")
     ORDER_CARDS = (By.CSS_SELECTOR, "[class*='OrderHistory_listItem__']")
     ORDER_MODAL = (By.CSS_SELECTOR, "[class*='Modal_orderBox__1xWdi']")
+    ORDER_MODAL_OPENED = (By.CSS_SELECTOR, "[class*='Modal_modal_opened__']")  
+    ORDER_MODAL_CLOSE_BUTTON = (By.XPATH, "//div/section[2]/div[1]/button")
 
 class OrderStatsLocators:
     TOTAL_ORDERS = (By.XPATH, "//p[contains(text(), 'Выполнено за все время:')]/following-sibling::p")

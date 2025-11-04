@@ -60,7 +60,6 @@ class TestMainFunctionality:
         
         assert not constructor_page.is_ingredient_modal_displayed()
 
-    @pytest.mark.smoke
     @allure.title("Увеличение каунтера ингредиента при добавлении в заказ")
     def test_ingredient_counter_increases(self, driver):
         main_page = MainPage(driver)
@@ -76,7 +75,6 @@ class TestMainFunctionality:
         new_counter = constructor_page.get_ingredient_counter()
         assert new_counter > initial_counter
 
-    @pytest.mark.smoke
     @allure.title("Оформление заказа залогиненным пользователем")
     def test_authenticated_user_can_create_order(self, driver, authenticated_user):
         main_page = MainPage(driver)

@@ -72,3 +72,27 @@ def authenticated_user(api_client, driver):
     yield email, password, name, auth_token
     
     api_client.delete_user(auth_token)
+
+@pytest.fixture
+def user_with_order(api_client, authenticated_user):
+    email, password, name, auth_token = authenticated_user
+    
+    ingredients = api_client.get_ingredients()
+    if ingredients and len(ingredients) > 0:
+        ingredients_ids = [ingredients[0]["_id"]]
+        order_number = api_client.create_order_and_get_number(ingredients_ids, auth_token)
+    
+    yield email, password, name, auth_token, order_number
+
+@pytest.fixture
+def order_data(api_client, authenticated_user):
+    email, password, name, auth_token = authenticated_user
+    ingredient_id = api_client.get_first_ingredient_id()
+    
+    yield {
+        'email': email,
+        'password': password, 
+        'name': name,
+        'auth_token': auth_token,
+        'ingredient_id': ingredient_id
+    }
