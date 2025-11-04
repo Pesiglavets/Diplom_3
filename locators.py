@@ -20,7 +20,6 @@ class ResetPasswordPageLocators:
     SHOW_PASSWORD_BUTTON = (By.CSS_SELECTOR, ".input__icon")
     PASSWORD_INPUT_FIELD = (By.CSS_SELECTOR, "input[name='Введите новый пароль']")
     PASSWORD_FIELD_CONTAINER  = (By.XPATH, "//div[contains(@class, 'input_type_text')]//label[text()='Пароль']/..")
-    SAVE_BUTTON = (By.XPATH, "//button[text()='Сохранить']")
 
 class BlockingLocators:
     MODAL_LOADING = (By.CSS_SELECTOR, "img.Modal_modal__loading__3534A")
